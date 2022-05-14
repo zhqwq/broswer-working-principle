@@ -2,4 +2,4 @@
 1. 下载或克隆本仓库代码
 2. 安装依赖，npm install
 3. 开发调试，npm run docs:dev
-4. 部署上线，sh deploy.sh
+4. 部署上线，sh deploy.sh（需要修改 config.js 中base字段，详见 vuepress2.0 文档）
