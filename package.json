@@ -1,0 +1,15 @@
+{
+  "name": "vuepress-broswer-working-principle",
+  "version": "1.0.0",
+  "description": "浏览器工作原理与实践 - 极客时间 原文记录",
+  "main": "index.js",
+  "author": "Zhang Kaiwei <kaiwei.zh@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.43"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
