@@ -1,5 +1,5 @@
 <template><h1 id="_08-调用栈-为什么javascript代码会出现栈溢出" tabindex="-1"><a class="header-anchor" href="#_08-调用栈-为什么javascript代码会出现栈溢出" aria-hidden="true">#</a> 08 | 调用栈：为什么JavaScript代码会出现栈溢出？</h1>
-<p>在<a href="/guide/07">上篇文章</a>中，我们讲到了，当一段代码被执行时，JavaScript 引擎先会对其进行编译，并创建执行上下文。但是并没有明确说明到底什么样的代码才算符合规范。</p>
+<p>在<a href="/guide/07" target="_blank" rel="noopener noreferrer">上篇文章<ExternalLinkIcon/></a>中，我们讲到了，当一段代码被执行时，JavaScript 引擎先会对其进行编译，并创建执行上下文。但是并没有明确说明到底什么样的代码才算符合规范。</p>
 <p>那么接下来我们就来明确下，哪些情况下代码才算是“一段”代码，才会在执行之前就进行编译并创建执行上下文。一般说来，有这么三种情况：</p>
 <ol>
 <li>

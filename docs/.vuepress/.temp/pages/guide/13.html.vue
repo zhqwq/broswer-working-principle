@@ -1,5 +1,5 @@
 <template><h1 id="_13-垃圾回收-垃圾数据是如何自动回收的" tabindex="-1"><a class="header-anchor" href="#_13-垃圾回收-垃圾数据是如何自动回收的" aria-hidden="true">#</a> 13 | 垃圾回收：垃圾数据是如何自动回收的？</h1>
-<p>在<a href="/guide/12">上一篇文章</a>中，我们提到了 JavaScript 中的数据是如何存储的，并通过例子分析了<strong>原始数据类型是存储在栈空间中的，引用类型的数据是存储在堆空间中的</strong>。通过这种分配方式，我们解决了数据的内存分配的问题。</p>
+<p>在<a href="/guide/12" target="_blank" rel="noopener noreferrer">上一篇文章<ExternalLinkIcon/></a>中，我们提到了 JavaScript 中的数据是如何存储的，并通过例子分析了<strong>原始数据类型是存储在栈空间中的，引用类型的数据是存储在堆空间中的</strong>。通过这种分配方式，我们解决了数据的内存分配的问题。</p>
 <p>不过有些数据被使用之后，可能就不再需要了，我们把这种数据称为<strong>垃圾数据</strong>。如果这些垃圾数据一直保存在内存中，那么内存会越用越多，所以我们需要<strong>对这些垃圾数据进行回收，以释放有限的内存空间</strong>。</p>
 <h2 id="不同语言的垃圾回收策略" tabindex="-1"><a class="header-anchor" href="#不同语言的垃圾回收策略" aria-hidden="true">#</a> 不同语言的垃圾回收策略</h2>
 <p>通常情况下，垃圾数据回收分为<strong>手动回收</strong>和<strong>自动回收</strong>两种策略。</p>
@@ -34,7 +34,7 @@ p <span class="token operator">=</span> <span class="token constant">NULL</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>当执行到第 6 行代码时，其调用栈和堆空间状态图如下所示：</p>
 <p><img src="https://static001.geekbang.org/resource/image/d8/b0/d807ca19c2c8853ef5a38dca0fb79ab0.jpg" alt="执行到 showName 函数时的内存模型"></p>
 <p>从图中可以看出，原始类型的数据被分配到栈中，引用类型的数据会被分配到堆中。当 foo 函数执行结束之后，foo 函数的执行上下文会从堆中被销毁掉，那么它是怎么被销毁的呢？下面我们就来分析一下。</p>
-<p>在<RouterLink to="/guide/12.html">上篇文章</RouterLink>中，我们简单介绍过了，如果执行到 showName 函数时，那么 JavaScript 引擎会创建 showName 函数的执行上下文，并将 showName 函数的执行上下文压入到调用栈中，最终执行到 showName 函数时，其调用栈就如上图所示。与此同时，还有一个<strong>记录当前执行状态的指针（称为 ESP）</strong>，指向调用栈中 showName 函数的执行上下文，表示当前正在执行 showName 函数。</p>
+<p>在<a href="/guide/12.md" target="_blank" rel="noopener noreferrer">上篇文章<ExternalLinkIcon/></a>中，我们简单介绍过了，如果执行到 showName 函数时，那么 JavaScript 引擎会创建 showName 函数的执行上下文，并将 showName 函数的执行上下文压入到调用栈中，最终执行到 showName 函数时，其调用栈就如上图所示。与此同时，还有一个<strong>记录当前执行状态的指针（称为 ESP）</strong>，指向调用栈中 showName 函数的执行上下文，表示当前正在执行 showName 函数。</p>
 <p>接着，当 showName 函数执行完成之后，函数执行流程就进入了 foo 函数，那这时就需要销毁 showName 函数的执行上下文了。ESP 这时候就帮上忙了，JavaScript 会将 ESP 下移到 foo 函数的执行上下文，<strong>这个下移操作就是销毁 showName 函数执行上下文的过程</strong>。</p>
 <p>你可能会有点懵，ESP 指针向下移动怎么就能把 showName 的执行上下文销毁了呢？具体你可以看下面这张移动 ESP 前后的对比图：</p>
 <p><img src="https://static001.geekbang.org/resource/image/b8/f3/b899cb27c0d92c31f9377db59939aaf3.jpg" alt="从栈中回收 showName 执行上下文"></p>

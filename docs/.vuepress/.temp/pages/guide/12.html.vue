@@ -116,7 +116,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>从图中你可以看到，变量 c 和变量 d 都指向了同一个堆中的对象，所以这就很好地解释了文章开头的那个问题，通过 c 修改 name 的值，变量 d 的值也跟着改变，归根结底它们是同一个对象。</p>
 <h2 id="再谈闭包" tabindex="-1"><a class="header-anchor" href="#再谈闭包" aria-hidden="true">#</a> 再谈闭包</h2>
 <p>现在你知道了作用域内的原始类型数据会被存储到栈空间，引用类型会被存储到堆空间，基于这两点的认知，我们再深入一步，探讨下闭包的内存模型。</p>
-<p>这里以<a href="/guide/10">《10 | 作用域链和闭包 ：代码中出现相同的变量，JavaScript 引擎是如何选择的？》</a>中关于闭包的一段代码为例：</p>
+<p>这里以<a href="/guide/10" target="_blank" rel="noopener noreferrer">《10 | 作用域链和闭包 ：代码中出现相同的变量，JavaScript 引擎是如何选择的？》<ExternalLinkIcon/></a>中关于闭包的一段代码为例：</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> myName <span class="token operator">=</span> <span class="token string">"极客时间"</span>
   <span class="token keyword">let</span> test1 <span class="token operator">=</span> <span class="token number">1</span>

@@ -1,5 +1,5 @@
 <template><h1 id="_09-块级作用域-var缺陷以及为什么要引入let和const" tabindex="-1"><a class="header-anchor" href="#_09-块级作用域-var缺陷以及为什么要引入let和const" aria-hidden="true">#</a> 09 | 块级作用域：var缺陷以及为什么要引入let和const？</h1>
-<p>在前面<a href="/guide/07">《07 | 变量提升：JavaScript 代码是按顺序执行的吗？》</a>这篇文章中，我们已经讲解了 JavaScript 中变量提升的相关内容，正是<strong>由于 JavaScript 存在变量提升这种特性，从而导致了很多与直觉不符的代码，这也是 JavaScript 的一个重要设计缺陷</strong>。</p>
+<p>在前面<a href="/guide/07" target="_blank" rel="noopener noreferrer">《07 | 变量提升：JavaScript 代码是按顺序执行的吗？》<ExternalLinkIcon/></a>这篇文章中，我们已经讲解了 JavaScript 中变量提升的相关内容，正是<strong>由于 JavaScript 存在变量提升这种特性，从而导致了很多与直觉不符的代码，这也是 JavaScript 的一个重要设计缺陷</strong>。</p>
 <p>虽然 ECMAScript6（以下简称 ES6）已经通过引入块级作用域并配合 let、const 关键字，来避开了这种设计缺陷，但是由于 JavaScript 需要保持向下兼容，所以变量提升在相当长一段时间内还会继续存在。这也加大了你理解概念的难度，因为既要理解新的机制，又要理解变量提升这套机制，关键这两套机制还是同时运行在“一套”系统中的。</p>
 <p>但如果抛开 JavaScript 的底层去理解这些，那么你大概率会很难深入理解其概念。俗话说，“断病要断因，治病要治根”，所以为了便于你更好地理解和学习，今天我们这篇文章会先“<strong>探病因</strong>”——分析为什么在 JavaScript 中会存在变量提升，以及变量提升所带来的问题；然后再来“<strong>开药方</strong>”——介绍如何通过<strong>块级作用域并配合 let 和 const 关键字</strong>来修复这种缺陷。</p>
 <h2 id="作用域-scope" tabindex="-1"><a class="header-anchor" href="#作用域-scope" aria-hidden="true">#</a> 作用域（scope）</h2>
@@ -60,7 +60,7 @@
 <span class="token punctuation">}</span>
 <span class="token function">showName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>执行上面这段代码，打印出来的是 undefined，而并没有像前面 C 代码那样打印出来“极客时间”的字符串。为什么输出的内容是 undefined 呢？我们再来分析一下。</p>
-<p>首先当刚执行到 showName 函数调用时，执行上下文和调用栈的状态是怎样的？具体分析过程你可以回顾<a href="/guide/08">《08 | 调用栈：为什么 JavaScript 代码会出现栈溢出？》</a>这篇文章的分析过程，这里我就直接展示出来了，最终的调用栈状态如下图所示：</p>
+<p>首先当刚执行到 showName 函数调用时，执行上下文和调用栈的状态是怎样的？具体分析过程你可以回顾<a href="/guide/08" target="_blank" rel="noopener noreferrer">《08 | 调用栈：为什么 JavaScript 代码会出现栈溢出？》<ExternalLinkIcon/></a>这篇文章的分析过程，这里我就直接展示出来了，最终的调用栈状态如下图所示：</p>
 <p><img src="https://static001.geekbang.org/resource/image/94/c9/944aaeaeb9ee50feea3c7d218acdd5c9.png" alt="开始执行 showName 函数时的调用栈"></p>
 <p>showName 函数的执行上下文创建后，JavaScript 引擎便开始执行 showName 函数内部的代码了。首先执行的是：</p>
 <p>console.log(myname);</p>

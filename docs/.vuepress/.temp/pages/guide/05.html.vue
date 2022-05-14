@@ -1,13 +1,13 @@
 <template><h1 id="_05-渲染流程-上-html、css和javascript-是如何变成页面的" tabindex="-1"><a class="header-anchor" href="#_05-渲染流程-上-html、css和javascript-是如何变成页面的" aria-hidden="true">#</a> 05 | 渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？</h1>
-<p>在<a href="/guide/04">上一篇文章</a>中我们介绍了导航相关的流程，那导航被提交后又会怎么样呢？就进入了渲染阶段。这个阶段很重要，了解其相关流程能让你“看透”页面是如何工作的，有了这些知识，你可以解决一系列相关的问题，比如能熟练使用开发者工具，因为能够理解开发者工具里面大部分项目的含义，能优化页面卡顿问题，使用 JavaScript 优化动画流程，通过优化样式表来防止强制同步布局，等等。</p>
+<p>在<a href="/guide/04" target="_blank" rel="noopener noreferrer">上一篇文章<ExternalLinkIcon/></a>中我们介绍了导航相关的流程，那导航被提交后又会怎么样呢？就进入了渲染阶段。这个阶段很重要，了解其相关流程能让你“看透”页面是如何工作的，有了这些知识，你可以解决一系列相关的问题，比如能熟练使用开发者工具，因为能够理解开发者工具里面大部分项目的含义，能优化页面卡顿问题，使用 JavaScript 优化动画流程，通过优化样式表来防止强制同步布局，等等。</p>
 <p>既然它的功能这么强大，那么今天，我们就来好好聊聊<strong>渲染流程。</strong></p>
 <p>通常，我们编写好 HTML、CSS、JavaScript 等文件，经过浏览器就会显示出漂亮的页面（如下图所示），但是你知道它们是如何转化成页面的吗？这背后的原理，估计很多人都答不上来。</p>
 <p><img src="https://static001.geekbang.org/resource/image/2b/79/2b08a85c63bee68c6fd95dabb648fd79.png" alt="img"></p>
 <p>从图中可以看出，左边输入的是 HTML、CSS、JavaScript 数据，这些数据经过中间渲染模块的处理，最终输出为屏幕上的像素。</p>
 <p>这中间的<strong>渲染模块</strong>就是我们今天要讨论的主题。为了能更好地理解下文，你可以先结合下图快速抓住 HTML、CSS 和 JavaScript 的含义：</p>
 <p><img src="https://static001.geekbang.org/resource/image/31/e6/31cd7172f743193d682d088a60cb44e6.png" alt="img"></p>
-<p>从上图可以看出，<strong>HTML 的内容是由标记和文本组成</strong>。标记也称为<strong>标签</strong>，每个标签都有它自己的语义，浏览器会根据标签的语义来正确展示 HTML 内容。比如上面的<p>标签是告诉浏览器在这里的内容需要创建一个新段落，中间的文本就是段落中需要显示的内容。</p>
-<p>如果需要改变 HTML 的字体颜色、大小等信息，就需要用到 CSS。CSS 又称为<strong>层叠样式表</strong>，<strong>是由选择器和属性组成</strong>，比如图中的 p 选择器，它会把 HTML 里面<p>标签的内容选择出来，然后再把选择器的属性值应用到<p>标签内容上。选择器里面有个 color 属性，它的值是 red，这是告诉渲染引擎把<p>标签的内容显示为红色。</p>
+<p>从上图可以看出，<strong>HTML 的内容是由标记和文本组成</strong>。标记也称为<strong>标签</strong>，每个标签都有它自己的语义，浏览器会根据标签的语义来正确展示 HTML 内容。比如上面的<code v-pre>&lt;p&gt;</code>标签是告诉浏览器在这里的内容需要创建一个新段落，中间的文本就是段落中需要显示的内容。</p>
+<p>如果需要改变 HTML 的字体颜色、大小等信息，就需要用到 CSS。CSS 又称为<strong>层叠样式表</strong>，<strong>是由选择器和属性组成</strong>，比如图中的 p 选择器，它会把 HTML 里面<code v-pre>&lt;p&gt;</code>标签的内容选择出来，然后再把选择器的属性值应用到<code v-pre>&lt;p&gt;</code>标签内容上。选择器里面有个 color 属性，它的值是 red，这是告诉渲染引擎把<code v-pre>&lt;p&gt;</code>标签的内容显示为红色。</p>
 <p>至于 <strong>JavaScript（简称为 JS），使用它可以使网页的内容“动”起来</strong>，比如上图中，可以通过 JavaScript 来修改 CSS 样式值，从而达到修改文本颜色的目的。</p>
 <p>搞清楚 HTML、CSS 和 JavaScript 的含义后，那么接下来我们就正式开始分析渲染模块了。</p>
 <p>由于渲染机制过于复杂，所以渲染模块在执行过程中会被划分为很多子阶段，输入的 HTML 经过这些子阶段，最后输出像素。我们把这样的一个处理流程叫做<strong>渲染流水线</strong>，其大致流程如下图所示：</p>
@@ -38,9 +38,9 @@
 <p>图中的 document 就是 DOM 结构，你可以看到，DOM 和 HTML 内容几乎是一样的，但是和 HTML 不同的是，DOM 是保存在内存中树状结构，可以通过 JavaScript 来查询或修改其内容。</p>
 <p>那下面就来看看如何通过 JavaScript 来修改 DOM 的内容，在控制台中输入：</p>
 <div class="language-text ext-text line-numbers-mode"><pre v-pre class="language-text"><code>document.getElementsByTagName("p")[0].innerText = "black"
-</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>这行代码的作用是把第一个<p>标签的内容修改为 black，具体执行结果你可以参考下图：</p>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>这行代码的作用是把第一个<code v-pre>&lt;p&gt;</code>标签的内容修改为 black，具体执行结果你可以参考下图：</p>
 <p><img src="https://static001.geekbang.org/resource/image/e7/74/e730aa1d73c1151c588e2f8c7e22c274.png" alt="img"></p>
-<p>从图中可以看出，在执行了一段修改第一个<p>标签的 JavaScript 代码后，DOM 的第一个 p 节点的内容成功被修改，同时页面中的内容也被修改了。</p>
+<p>从图中可以看出，在执行了一段修改第一个<code v-pre>&lt;p&gt;</code>标签的 JavaScript 代码后，DOM 的第一个 p 节点的内容成功被修改，同时页面中的内容也被修改了。</p>
 <p>好了，现在我们已经生成 DOM 树了，但是 DOM 节点的样式我们依然不知道，要让 DOM 节点拥有正确的样式，这就需要样式计算了。</p>
 <h2 id="样式计算-recalculate-style" tabindex="-1"><a class="header-anchor" href="#样式计算-recalculate-style" aria-hidden="true">#</a> 样式计算（Recalculate Style）</h2>
 <p>样式计算的目的是为了计算出 DOM 节点中每个元素的具体样式，这个阶段大体可分为三步来完成。</p>
@@ -53,6 +53,7 @@
 <p>通过 link 引用的外部 CSS 文件</p>
 </li>
 <li>
+<p><code v-pre>&lt;style&gt;</code>标记内的 CSS</p>
 </li>
 <li>
 <p>元素的 style 属性内嵌的 CSS</p>
@@ -101,7 +102,7 @@
 <p>这个界面展示的信息很丰富，大致可描述为如下。</p>
 <ul>
 <li>
-<p>首先，可以选择要<strong>查看的元素的样式（位于图中的区域 2 中）</strong>，在图中的第 1 个区域中点击对应的元素，就可以在下面的区域查看该元素的样式了。比如这里我们选择的元素是<p>标签，位于 html.body.div. 这个路径下面。</p>
+<p>首先，可以选择要<strong>查看的元素的样式（位于图中的区域 2 中）</strong>，在图中的第 1 个区域中点击对应的元素，就可以在下面的区域查看该元素的样式了。比如这里我们选择的元素是<code v-pre>&lt;p&gt;</code>标签，位于 html.body.div. 这个路径下面。</p>
 </li>
 <li>
 <p>其次，可以从**样式来源（位于图中的区域 3 中）**中查看样式的具体来源信息，看看是来源于样式文件，还是来源于 UserAgent 样式表。<strong>这里需要特别提下 UserAgent 样式，它是浏览器提供的一组默认样式，如果你不提供任何样式，默认使用的就是 UserAgent 样式。</strong></p>
@@ -154,5 +155,3 @@
 <p>最后，给你留个思考题：如果下载 CSS 文件阻塞了，会阻塞 DOM 树的合成吗？会阻塞页面的显示吗？</p>
 <p>欢迎在留言区与我分享你的想法，也欢迎你在留言区记录你的思考过程。感谢阅读，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友。</p>
 </template>
-
-<style>标记内的 CSS

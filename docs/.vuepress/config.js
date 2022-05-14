@@ -4,7 +4,7 @@ module.exports = {
   lang: 'zh-CN',
   title: '浏览器工作原理与实践',
   description: '浏览器工作原理与实践 - 李兵',
-  base: '/',
+  base: '/broswer-working-principle/',
   theme: defaultTheme({
     navbar: [
       { text: '首页', link: '/' },

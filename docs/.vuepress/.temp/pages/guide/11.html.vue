@@ -1,5 +1,5 @@
 <template><h1 id="_11-this-从javascript执行上下文的视角讲清楚this" tabindex="-1"><a class="header-anchor" href="#_11-this-从javascript执行上下文的视角讲清楚this" aria-hidden="true">#</a> 11 | this：从JavaScript执行上下文的视角讲清楚this</h1>
-<p>在<a href="/guide/10">上篇文章</a>中，我们讲了词法作用域、作用域链以及闭包，并在最后思考题中留了下面这样一段代码：</p>
+<p>在<a href="/guide/10" target="_blank" rel="noopener noreferrer">上篇文章<ExternalLinkIcon/></a>中，我们讲了词法作用域、作用域链以及闭包，并在最后思考题中留了下面这样一段代码：</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token keyword">var</span> bar <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">myName</span><span class="token operator">:</span><span class="token string">"time.geekbang.com"</span><span class="token punctuation">,</span>
   <span class="token function-variable function">printName</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -49,7 +49,7 @@ int main() {
 <h2 id="javascript-中的-this-是什么" tabindex="-1"><a class="header-anchor" href="#javascript-中的-this-是什么" aria-hidden="true">#</a> JavaScript 中的 this 是什么</h2>
 <p>关于 this，我们还是得先从执行上下文说起。在前面几篇文章中，我们提到执行上下文中包含了变量环境、词法环境、外部环境，但其实还有一个 this 没有提及，具体你可以参考下图：</p>
 <p><img src="https://static001.geekbang.org/resource/image/b3/8d/b398610fd8060b381d33afc9b86f988d.png" alt="执行上下文中的 this"></p>
-<p>从图中可以看出，<strong>this 是和执行上下文绑定的</strong>，也就是说每个执行上下文中都有一个 this。前面<a href="/guide/08">《08 | 调用栈：为什么 JavaScript 代码会出现栈溢出？》</a>中我们提到过，执行上下文主要分为三种——全局执行上下文、函数执行上下文和 eval 执行上下文，所以对应的 this 也只有这三种——全局执行上下文中的 this、函数中的 this 和 eval 中的 this。</p>
+<p>从图中可以看出，<strong>this 是和执行上下文绑定的</strong>，也就是说每个执行上下文中都有一个 this。前面<a href="/guide/08" target="_blank" rel="noopener noreferrer">《08 | 调用栈：为什么 JavaScript 代码会出现栈溢出？》<ExternalLinkIcon/></a>中我们提到过，执行上下文主要分为三种——全局执行上下文、函数执行上下文和 eval 执行上下文，所以对应的 this 也只有这三种——全局执行上下文中的 this、函数中的 this 和 eval 中的 this。</p>
 <p>不过由于 eval 我们使用的不多，所以本文我们对此就不做介绍了，如果你感兴趣的话，可以自行搜索和学习相关知识。</p>
 <p>那么接下来我们就重点讲解下<strong>全局执行上下文中的 this</strong> 和<strong>函数执行上下文中的 this。</strong></p>
 <h2 id="全局执行上下文中的-this" tabindex="-1"><a class="header-anchor" href="#全局执行上下文中的-this" aria-hidden="true">#</a> 全局执行上下文中的 this</h2>

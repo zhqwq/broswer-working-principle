@@ -94,13 +94,54 @@ export const themeData = {
       "text": "浏览器中的页面循环系统 (6讲)",
       "children": [
         {
-          "text": "保留",
-          "link": "/guide/07"
+          "text": "15 | 消息队列和事件循环：页面是怎么“活”起来的？",
+          "link": "/guide/15"
+        },
+        {
+          "text": "16 | WebAPI: setTimeout是如何实现的?",
+          "link": "/guide/16"
+        },
+        {
+          "text": "17 | WebAPI: XMLHttpRequest是怎么实现的?",
+          "link": "/guide/17"
+        },
+        {
+          "text": "18 | 宏任务和微任务：不是所有任务都是一个待遇",
+          "link": "/guide/18"
+        },
+        {
+          "text": "18 | 宏任务和微任务：不是所有任务都是一个待遇",
+          "link": "/guide/18"
+        },
+        {
+          "text": "19 | Promise: 使用Promise, 告别回调函数",
+          "link": "/guide/19"
+        },
+        {
+          "text": "20 | async/await: 使用同步的方式去写异步代码",
+          "link": "/guide/20"
         }
       ]
     },
     {
       "text": "浏览器中的页面 (8讲)",
+      "children": [
+        {
+          "text": "21 | Chrome开发者工具: 利用网络面板做性能分析",
+          "link": "/guide/21"
+        },
+        {
+          "text": "22 | DOM树: JavaScript是如何影响DOM树构建的?",
+          "link": "/guide/22"
+        },
+        {
+          "text": "23 | 渲染流水线: CSS如何影响首次加载时的白屏时间?",
+          "link": "/guide/23"
+        }
+      ]
+    },
+    {
+      "text": "浏览器安全 (5讲)",
       "children": [
         {
           "text": "保留",
@@ -109,7 +150,7 @@ export const themeData = {
       ]
     },
     {
-      "text": "浏览器安全 (5讲)",
+      "text": "结束语 (3讲)",
       "children": [
         {
           "text": "保留",
@@ -154,17 +195,4 @@ export const themeData = {
   "openInNewWindow": "open in new window",
   "toggleDarkMode": "toggle dark mode",
   "toggleSidebar": "toggle sidebar"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updateThemeData) {
-    __VUE_HMR_RUNTIME__.updateThemeData(themeData)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ themeData }) => {
-    __VUE_HMR_RUNTIME__.updateThemeData(themeData)
-  })
 }

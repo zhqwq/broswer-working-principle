@@ -1,5 +1,5 @@
 <template><h1 id="_10-作用域链和闭包-代码中出现相同的变量-javascript引擎是如何选择的" tabindex="-1"><a class="header-anchor" href="#_10-作用域链和闭包-代码中出现相同的变量-javascript引擎是如何选择的" aria-hidden="true">#</a> 10 | 作用域链和闭包 ：代码中出现相同的变量，JavaScript引擎是如何选择的？</h1>
-<p>在<a href="/guide/09">上一篇文章</a>中我们讲到了什么是作用域，以及 ES6 是如何通过变量环境和词法环境来同时支持变量提升和块级作用域，在最后我们也提到了如何通过词法环境和变量环境来查找变量，这其中就涉及到<strong>作用域链</strong>的概念。</p>
+<p>在<a href="/guide/09" target="_blank" rel="noopener noreferrer">上一篇文章<ExternalLinkIcon/></a>中我们讲到了什么是作用域，以及 ES6 是如何通过变量环境和词法环境来同时支持变量提升和块级作用域，在最后我们也提到了如何通过词法环境和变量环境来查找变量，这其中就涉及到<strong>作用域链</strong>的概念。</p>
 <p>理解作用域链是理解闭包的基础，而闭包在 JavaScript 中几乎无处不在，同时作用域和作用域链还是所有编程语言的基础。所以，如果你想学透一门语言，作用域和作用域链一定是绕不开的。</p>
 <p>那今天我们就来聊聊<strong>什么是作用域链</strong>，并通过作用域链再来讲讲<strong>什么是闭包</strong>。</p>
 <p>首先我们来看下面这段代码：</p>
@@ -70,7 +70,7 @@
 <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>你可以自己先分析下这段代码的执行流程，看看能否分析出来执行结果。</p>
 <p>要想得出其执行结果，那接下来我们就得站在作用域链和词法环境的角度来分析下其执行过程。</p>
-<p>在<a href="/guide/09">上篇文章</a>中我们已经介绍过了，ES6 是支持块级作用域的，当执行到代码块时，如果代码块中有 let 或者 const 声明的变量，那么变量就会存放到该函数的词法环境中。对于上面这段代码，当执行到 bar 函数内部的 if 语句块时，其调用栈的情况如下图所示：</p>
+<p>在<a href="/guide/09" target="_blank" rel="noopener noreferrer">上篇文章<ExternalLinkIcon/></a>中我们已经介绍过了，ES6 是支持块级作用域的，当执行到代码块时，如果代码块中有 let 或者 const 声明的变量，那么变量就会存放到该函数的词法环境中。对于上面这段代码，当执行到 bar 函数内部的 if 语句块时，其调用栈的情况如下图所示：</p>
 <p><img src="https://static001.geekbang.org/resource/image/25/a7/25053af5ae30c8be991fa14631cde0a7.png" alt="块级作用域中是如何查找变量的"></p>
 <p>现在是执行到 bar 函数的 if 语块之内，需要打印出来变量 test，那么就需要查找到 test 变量的值，其查找过程我已经在上图中使用序号 1、2、3、4、5 标记出来了。</p>
 <p>下面我就来解释下这个过程。首先是在 bar 函数的执行上下文中查找，但因为 bar 函数的执行上下文中没有定义 test 变量，所以根据词法作用域的规则，下一步就在 bar 函数的外部作用域中查找，也就是全局作用域。</p>

@@ -1,5 +1,5 @@
 <template><h1 id="_03-http请求流程-为什么很多站点第二次打开速度会很快" tabindex="-1"><a class="header-anchor" href="#_03-http请求流程-为什么很多站点第二次打开速度会很快" aria-hidden="true">#</a> 03 | HTTP请求流程：为什么很多站点第二次打开速度会很快？</h1>
-<p>在<a href="/guide/01">上一篇文章</a>中我介绍了 TCP 协议是如何保证数据完整传输的，相信你还记得，一个 TCP 连接过程包括了建立连接、传输数据和断开连接三个阶段。</p>
+<p>在<a href="/guide/01" target="_blank" rel="noopener noreferrer">上一篇文章<ExternalLinkIcon/></a>中我介绍了 TCP 协议是如何保证数据完整传输的，相信你还记得，一个 TCP 连接过程包括了建立连接、传输数据和断开连接三个阶段。</p>
 <p>而 HTTP 协议，正是建立在 TCP 连接基础之上的。<strong>HTTP 是一种允许浏览器向服务器获取资源的协议，是 Web 的基础</strong>，通常由浏览器发起请求，用来获取不同类型的文件，例如 HTML 文件、CSS 文件、JavaScript 文件、图片、视频等。此外，<strong>HTTP 也是浏览器使用最广的协议</strong>，所以要想学好浏览器，就要先深入了解 HTTP。</p>
 <p>不知道你是否有过下面这些疑问：</p>
 <ol>

@@ -1,5 +1,5 @@
 <template><h1 id="_06-渲染流程-下-html、css和javascript-是如何变成页面的" tabindex="-1"><a class="header-anchor" href="#_06-渲染流程-下-html、css和javascript-是如何变成页面的" aria-hidden="true">#</a> 06 | 渲染流程（下）：HTML、CSS和JavaScript，是如何变成页面的？</h1>
-<p>在<a href="/guide/05">上篇文章</a>中，我们介绍了渲染流水线中的 <strong>DOM 生成、样式计算和布局</strong>三个阶段，那今天我们接着讲解渲染流水线后面的阶段。</p>
+<p>在<a href="/guide/05" target="_blank" rel="noopener noreferrer">上篇文章<ExternalLinkIcon/></a>中，我们介绍了渲染流水线中的 <strong>DOM 生成、样式计算和布局</strong>三个阶段，那今天我们接着讲解渲染流水线后面的阶段。</p>
 <p>这里还是先简单回顾下上节前三个阶段的主要内容：在 HTML 页面内容被提交给渲染引擎之后，渲染引擎首先将 HTML 解析为浏览器可以理解的 DOM；然后根据 CSS 样式表，计算出 DOM 树所有节点的样式；接着又计算每个元素的几何坐标位置，并将这些信息保存在布局树中。</p>
 <h2 id="分层" tabindex="-1"><a class="header-anchor" href="#分层" aria-hidden="true">#</a> 分层</h2>
 <p>现在我们有了布局树，而且每个元素的具体位置信息都计算出来了，那么接下来是不是就要开始着手绘制页面了？</p>
