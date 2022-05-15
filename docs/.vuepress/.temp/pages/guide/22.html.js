@@ -41,12 +41,12 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1652544035000,
+    "updatedTime": 1652546610000,
     "contributors": [
       {
         "name": "Zhang Kaiwei",
         "email": "kaiwei.zh@qq.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   },

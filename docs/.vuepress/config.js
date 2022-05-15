@@ -125,8 +125,7 @@ module.exports = {
           {
             text: '20 | async/await: 使用同步的方式去写异步代码',
             link: '/guide/20'
-          },
-
+          }
         ]
       },
       {
@@ -143,6 +142,43 @@ module.exports = {
           {
             text: '23 | 渲染流水线: CSS如何影响首次加载时的白屏时间?',
             link: '/guide/23'
+          },
+          {
+            text: '24 | 分层和合成机制: 为什么CSS动画比JavaScript高效?',
+            link: '/guide/24'
+          },
+          {
+            text: '25 | 页面性能：如何系统地优化页面？',
+            link: '/guide/25'
+          },
+          {
+            text: '26 | 虚拟DOM: 虚拟DOM和实际的DOM有何不同?',
+            link: '/guide/26'
+          },
+          {
+            text: '27 | 渐进式网页应用(PWA): 它究竟解决了Web应用的哪些问题?',
+            link: '/guide/27'
+          },
+          {
+            text: '28 | WebComponent: 像搭积木一样构建Web应用',
+            link: '/guide/28'
+          }
+        ]
+      },
+      {
+        text: '浏览器中的网络 (3讲)',
+        children: [
+          {
+            text: '29 | HTTP/1: HTTP性能优化',
+            link: '/guide/29'
+          },
+          {
+            text: '30 | HTTP/2: 如何提升网络速度？',
+            link: '/guide/30'
+          },
+          {
+            text: '31|HTTP/3:甩掉TCP、TLS 的包袱，构建高效网络',
+            link: '/guide/31'
           }
         ]
       },
@@ -151,7 +187,23 @@ module.exports = {
         children: [
           {
             text: '保留',
-            link: '/guide/07'
+            link: '/guide/29'
+          },
+          {
+            text: '保留',
+            link: '/guide/29'
+          },
+          {
+            text: '保留',
+            link: '/guide/29'
+          },
+          {
+            text: '保留',
+            link: '/guide/29'
+          },
+          {
+            text: '保留',
+            link: '/guide/29'
           }
         ]
       },

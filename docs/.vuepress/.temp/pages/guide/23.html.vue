@@ -1,4 +1,5 @@
-<template><p>在<a href="/guide/22" target="_blank" rel="noopener noreferrer">上一篇文章<ExternalLinkIcon/></a>中我们详细介绍了 DOM 的生成过程，并结合具体例子分析了 JavaScript 是如何阻塞 DOM 生成的。那本文我们就继续深入聊聊渲染流水线中的 CSS。因为 CSS 是页面中非常重要的资源，它决定了页面最终显示出来的效果，并影响着用户对整个网站的第一体验。所以，搞清楚浏览器中的 CSS 是怎么工作的很有必要，只有理解了 CSS 是如何工作的，你才能更加深刻地理解如何去优化页面。</p>
+<template><h1 id="_23-渲染流水线-css如何影响首次加载时的白屏时间" tabindex="-1"><a class="header-anchor" href="#_23-渲染流水线-css如何影响首次加载时的白屏时间" aria-hidden="true">#</a> 23 | 渲染流水线：CSS如何影响首次加载时的白屏时间？</h1>
+<p>在<a href="/guide/22" target="_blank" rel="noopener noreferrer">上一篇文章<ExternalLinkIcon/></a>中我们详细介绍了 DOM 的生成过程，并结合具体例子分析了 JavaScript 是如何阻塞 DOM 生成的。那本文我们就继续深入聊聊渲染流水线中的 CSS。因为 CSS 是页面中非常重要的资源，它决定了页面最终显示出来的效果，并影响着用户对整个网站的第一体验。所以，搞清楚浏览器中的 CSS 是怎么工作的很有必要，只有理解了 CSS 是如何工作的，你才能更加深刻地理解如何去优化页面。</p>
 <p>本文我们先站在渲染流水线的视角来介绍 CSS 是如何工作的，然后通过 CSS 的工作流程来分析性能瓶颈，最后再来讨论如何减少首次加载时的白屏时间。</p>
 <h2 id="渲染流水线视角下的-css" tabindex="-1"><a class="header-anchor" href="#渲染流水线视角下的-css" aria-hidden="true">#</a> 渲染流水线视角下的 CSS</h2>
 <p>我们先结合下面代码来看看最简单的渲染流程：</p>

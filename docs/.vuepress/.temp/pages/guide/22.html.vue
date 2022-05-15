@@ -1,4 +1,5 @@
-<template><p>在<a href="/guide/21" target="_blank" rel="noopener noreferrer">上一篇文章<ExternalLinkIcon/></a>中，我们通过开发者工具中的网络面板，介绍了网络请求过程的几种<strong>性能指标</strong>以及对页面加载的影响。</p>
+<template><h1 id="_22-dom树-javascript是如何影响dom树构建的" tabindex="-1"><a class="header-anchor" href="#_22-dom树-javascript是如何影响dom树构建的" aria-hidden="true">#</a> 22 | DOM树：JavaScript是如何影响DOM树构建的？</h1>
+<p>在<a href="/guide/21" target="_blank" rel="noopener noreferrer">上一篇文章<ExternalLinkIcon/></a>中，我们通过开发者工具中的网络面板，介绍了网络请求过程的几种<strong>性能指标</strong>以及对页面加载的影响。</p>
 <p>而在渲染流水线中，后面的步骤都直接或者间接地依赖于 DOM 结构，所以本文我们就继续沿着网络数据流路径来<strong>介绍 DOM 树是怎么生成的</strong>。然后再基于 DOM 树的解析流程介绍两块内容：第一个是在解析过程中遇到 JavaScript 脚本，DOM 解析器是如何处理的？第二个是 DOM 解析器是如何处理跨站点资源的？</p>
 <h2 id="什么是-dom" tabindex="-1"><a class="header-anchor" href="#什么是-dom" aria-hidden="true">#</a> 什么是 DOM</h2>
 <p>从网络传给渲染引擎的 HTML 文件字节流是无法直接被渲染引擎理解的，所以要将其转化为渲染引擎能够理解的内部结构，这个结构就是 DOM。DOM 提供了对 HTML 文档结构化的表述。在渲染引擎中，DOM 有三个层面的作用。</p>
