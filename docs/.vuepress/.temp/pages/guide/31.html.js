@@ -53,8 +53,27 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": null,
-    "contributors": []
+    "updatedTime": 1652616308000,
+    "contributors": [
+      {
+        "name": "Zhang Kaiwei",
+        "email": "kaiwei.zh@qq.com",
+        "commits": 1
+      }
+    ]
   },
   "filePathRelative": "guide/31.md"
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }
