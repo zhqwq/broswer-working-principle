@@ -220,9 +220,30 @@ module.exports = {
         text: '课外加餐 (6讲)',
         children: [
           {
-            text: '保留',
-            link: '/guide/07'
-          }
+            text: '加餐一｜浏览上下文组：如何计算Chrome中渲染进程的个数？',
+            link: '/guide/extra-1'
+          },
+          {
+            text: '加餐二｜任务调度：有了setTimeOut，为什么还要使用rAF？',
+            link: '/guide/extra-2'
+          },
+          {
+            text: '加餐三｜加载阶段性能：使用Audits来优化Web性能',
+            link: '/guide/extra-3'
+          },
+          {
+            text: '加餐四｜页面性能工具：如何使用Performance？',
+            link: '/guide/extra-4'
+          },
+          {
+            text: '加餐五 | 性能分析工具：如何分析Performance中的Main指标？',
+            link: '/guide/extra-5'
+          },
+          {
+            text: '加餐六｜HTTPS：浏览器如何验证数字证书？',
+            link: '/guide/extra-6'
+          },
+
         ]
       }
     ]

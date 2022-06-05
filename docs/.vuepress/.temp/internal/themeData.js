@@ -181,24 +181,24 @@ export const themeData = {
       "text": "浏览器安全 (5讲)",
       "children": [
         {
-          "text": "保留",
-          "link": "/guide/29"
+          "text": "32 | 同源策略: 为什么XMLHttpRequest不能跨域请求资源?",
+          "link": "/guide/32"
         },
         {
-          "text": "保留",
-          "link": "/guide/29"
+          "text": "33 | 跨站脚本攻击(XSS): 为什么Cookie中有HttpOnly属性?",
+          "link": "/guide/33"
         },
         {
-          "text": "保留",
-          "link": "/guide/29"
+          "text": "34 | CSRF攻击: 陌生链接不要随便点",
+          "link": "/guide/34"
         },
         {
-          "text": "保留",
-          "link": "/guide/29"
+          "text": "35 | 安全沙箱：页面和系统之间的隔离墙",
+          "link": "/guide/35"
         },
         {
-          "text": "保留",
-          "link": "/guide/29"
+          "text": "36 | HTTPS: 让数据传输更安全",
+          "link": "/guide/36"
         }
       ]
     },
@@ -206,8 +206,8 @@ export const themeData = {
       "text": "结束语 (3讲)",
       "children": [
         {
-          "text": "保留",
-          "link": "/guide/07"
+          "text": "结束语 | 大道至简",
+          "link": "/guide/end"
         }
       ]
     },
@@ -215,8 +215,28 @@ export const themeData = {
       "text": "课外加餐 (6讲)",
       "children": [
         {
-          "text": "保留",
-          "link": "/guide/07"
+          "text": "加餐一｜浏览上下文组：如何计算Chrome中渲染进程的个数？",
+          "link": "/guide/extra-1"
+        },
+        {
+          "text": "加餐二｜任务调度：有了setTimeOut，为什么还要使用rAF？",
+          "link": "/guide/extra-2"
+        },
+        {
+          "text": "加餐三｜加载阶段性能：使用Audits来优化Web性能",
+          "link": "/guide/extra-3"
+        },
+        {
+          "text": "加餐四｜页面性能工具：如何使用Performance？",
+          "link": "/guide/extra-4"
+        },
+        {
+          "text": "加餐五 | 性能分析工具：如何分析Performance中的Main指标？",
+          "link": "/guide/extra-5"
+        },
+        {
+          "text": "加餐六｜HTTPS：浏览器如何验证数字证书？",
+          "link": "/guide/extra-6"
         }
       ]
     }

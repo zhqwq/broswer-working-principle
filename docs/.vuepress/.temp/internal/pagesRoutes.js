@@ -33,8 +33,20 @@ const routeItems = [
   ["v-cfcd96f4","/guide/29.html",{"title":"29 | HTTP/1：HTTP性能优化"},["/guide/29","/guide/29.md"]],
   ["v-84b85ba0","/guide/30.html",{"title":"30｜HTTP/2：如何提升网络速度？"},["/guide/30","/guide/30.md"]],
   ["v-814eaa62","/guide/31.html",{"title":"31｜HTTP/3：甩掉TCP、TLS 的包袱，构建高效网络"},["/guide/31","/guide/31.md"]],
+  ["v-7de4f924","/guide/32.html",{"title":"32 | 同源策略：为什么XMLHttpRequest不能跨域请求资源？"},["/guide/32","/guide/32.md"]],
+  ["v-7a7b47e6","/guide/33.html",{"title":"33 | 跨站脚本攻击（XSS）：为什么Cookie中有HttpOnly属性？"},["/guide/33","/guide/33.md"]],
+  ["v-771196a8","/guide/34.html",{"title":"34 | CSRF攻击：陌生链接不要随便点"},["/guide/34","/guide/34.md"]],
+  ["v-73a7e56a","/guide/35.html",{"title":"35 | 安全沙箱：页面和系统之间的隔离墙"},["/guide/35","/guide/35.md"]],
+  ["v-703e342c","/guide/36.html",{"title":"36 | HTTPS：让数据传输更安全"},["/guide/36","/guide/36.md"]],
+  ["v-698295ca","/guide/end.html",{"title":"结束语 | 大道至简"},["/guide/end","/guide/end.md"]],
+  ["v-bb37dade","/guide/extra-1.html",{"title":"加餐一｜浏览上下文组：如何计算Chrome中渲染进程的个数？"},["/guide/extra-1","/guide/extra-1.md"]],
+  ["v-b7ce29a0","/guide/extra-2.html",{"title":"加餐二｜任务调度：有了setTimeOut，为什么还要使用rAF？"},["/guide/extra-2","/guide/extra-2.md"]],
+  ["v-b4647862","/guide/extra-3.html",{"title":"加餐三｜加载阶段性能：使用Audits来优化Web性能"},["/guide/extra-3","/guide/extra-3.md"]],
+  ["v-b0fac724","/guide/extra-4.html",{"title":"加餐四｜页面性能工具：如何使用Performance？"},["/guide/extra-4","/guide/extra-4.md"]],
   ["v-77a9ffd9","/guide/intro.html",{"title":"开篇词 | 参透了浏览器的工作原理，你就能解决80%的前端难题"},["/guide/intro","/guide/intro.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
+  ["v-ad9115e6","/guide/extra-5.html",{"title":"加餐五 | 性能分析工具：如何分析Performance中的Main指标？"},["/guide/extra-5","/guide/extra-5.md"]],
+  ["v-aa2764a8","/guide/extra-6.html",{"title":"加餐六｜HTTPS：浏览器如何验证数字证书？"},["/guide/extra-6","/guide/extra-6.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(
