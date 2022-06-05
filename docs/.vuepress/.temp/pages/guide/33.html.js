@@ -79,27 +79,14 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1652667706000,
+    "updatedTime": 1654412291000,
     "contributors": [
       {
         "name": "Zhang Kaiwei",
         "email": "kaiwei.zh@qq.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   },
   "filePathRelative": "guide/33.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

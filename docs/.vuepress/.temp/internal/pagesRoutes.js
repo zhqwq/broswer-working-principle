@@ -43,10 +43,10 @@ const routeItems = [
   ["v-b7ce29a0","/guide/extra-2.html",{"title":"加餐二｜任务调度：有了setTimeOut，为什么还要使用rAF？"},["/guide/extra-2","/guide/extra-2.md"]],
   ["v-b4647862","/guide/extra-3.html",{"title":"加餐三｜加载阶段性能：使用Audits来优化Web性能"},["/guide/extra-3","/guide/extra-3.md"]],
   ["v-b0fac724","/guide/extra-4.html",{"title":"加餐四｜页面性能工具：如何使用Performance？"},["/guide/extra-4","/guide/extra-4.md"]],
-  ["v-77a9ffd9","/guide/intro.html",{"title":"开篇词 | 参透了浏览器的工作原理，你就能解决80%的前端难题"},["/guide/intro","/guide/intro.md"]],
-  ["v-3706649a","/404.html",{"title":""},["/404"]],
   ["v-ad9115e6","/guide/extra-5.html",{"title":"加餐五 | 性能分析工具：如何分析Performance中的Main指标？"},["/guide/extra-5","/guide/extra-5.md"]],
   ["v-aa2764a8","/guide/extra-6.html",{"title":"加餐六｜HTTPS：浏览器如何验证数字证书？"},["/guide/extra-6","/guide/extra-6.md"]],
+  ["v-77a9ffd9","/guide/intro.html",{"title":"开篇词 | 参透了浏览器的工作原理，你就能解决80%的前端难题"},["/guide/intro","/guide/intro.md"]],
+  ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(
